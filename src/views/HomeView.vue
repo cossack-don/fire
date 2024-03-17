@@ -20,6 +20,8 @@ const handlerHideBlock1 = ()=>isHideBlock1.value = !isHideBlock1.value
 const handlerHideBlock2 = ()=>isHideBlock2.value = !isHideBlock2.value
 const handlerHideBlock3 = ()=>isHideBlock3.value = !isHideBlock3.value
 
+
+const storeGlobal= useStoreGlobal()
 const isLoadingData = ref(false)
 const serviceFireBase = {
   getListData: async()=> {
@@ -29,6 +31,14 @@ const serviceFireBase = {
       const URL = 'https://it-words-f02a9-default-rtdb.firebaseio.com/links.json'
       const data = await fetch(URL)
       const dataParseJson = await data.json()
+
+
+      let arr = []
+      for (let obj in dataParseJson) {
+        for (let childrenObj in dataParseJson[obj]) arr.push(dataParseJson[obj][childrenObj])
+      }
+
+      storeGlobal.$patch({stateAllLinks: arr})
 
       reactLinks.value = dataParseJson.react
       pythonLinks.value = dataParseJson.python
@@ -53,6 +63,7 @@ const serviceFireBase = {
 onMounted(()=> serviceFireBase.getListData())
 
 import Loader from '@/components/Loader'
+import {useStoreGlobal} from "@/stores/useStoreGlobal";
 </script>
 
 <template>

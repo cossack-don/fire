@@ -4,15 +4,33 @@ import HelloWorld from './components/HelloWorld.vue'
 import Logo from '@/components/Logo.vue'
 import RoadBus from '@/components/RoadBus.vue'
 import {ref} from 'vue'
+import {useStoreGlobal} from "@/stores/useStoreGlobal";
 
 const isDark = ref(false)
 const handlerChangeTheme = ()=>{
   isDark.value = !isDark.value
 }
+
+const storeGlobal = useStoreGlobal()
+const stateSearch = ref('')
+
+const handlerSearch =(e)=>{
+
+ const a = storeGlobal.stateAllLinks.filter((el)=>{
+    if(typeof el.name === "number") return
+
+    if(el.name.toLowerCase().includes((e?.target?.value.toLowerCase()))) {
+      return el
+    }
+  })
+  // console.log(a,3)
+}
 </script>
 
 <template>
 <div :class="{'dark':isDark, 'sun':!isDark}">
+<!--  <input type="text" v-model="stateSearch" @input="handlerSearch">-->
+
   <div class="d-flex align-items-center justify-content-center">
     <span  class="card-vue2">Fire Progressive App</span>
 
