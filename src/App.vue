@@ -17,18 +17,19 @@ const handlerChangeTheme = ()=>{
     <span  class="card-vue2">Fire Progressive App</span>
 
     <Logo/>
-    <span>
-      <button @click="handlerChangeTheme">{{isDark ? 'sun':'dark'}}</button>
-    </span>
+
   </div>
 
   <RoadBus style="margin-top: -50px; margin-bottom: -150px; width: 100%; height: 500px"/>
-  <header>
 
-    <div class="d-flex">
+  <header class="header">
+    <div class="d-flex justify-content-center">
       <nav class="d-flex">
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/" style="margin-right: 15px">Home</RouterLink>
+        <RouterLink to="/about" style="margin-right: 15px">About</RouterLink>
+
+      <button @click="handlerChangeTheme">{{isDark ? 'sun':'dark'}}</button>
+
       </nav>
     </div>
 
@@ -42,11 +43,13 @@ const handlerChangeTheme = ()=>{
 <style scoped>
 .sun {
   background: #ebd9ff;
+  padding:15px;
   padding-bottom: 250px;
 }
 
 .dark {
   background: #000;
+  padding:15px;
   padding-bottom: 250px;
 
 }
@@ -58,66 +61,69 @@ const handlerChangeTheme = ()=>{
 
 }
 
+.header {
+  margin-top: 50px;
+}
 
 /*header {*/
 /*  line-height: 1.5;*/
 /*  max-height: 100vh;*/
 /*}*/
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
+/*.logo {*/
+/*  display: block;*/
+/*  margin: 0 auto 2rem;*/
+/*}*/
 
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
+/*nav {*/
+/*  width: 100%;*/
+/*  font-size: 12px;*/
+/*  text-align: center;*/
+/*  margin-top: 2rem;*/
+/*}*/
 
 nav a.router-link-exact-active {
-  color: var(--color-text);
+  color:red;
 }
 
 nav a.router-link-exact-active:hover {
   background-color: transparent;
 }
 
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
+/*nav a {*/
+/*  display: inline-block;*/
+/*  padding: 0 1rem;*/
+/*  border-left: 1px solid var(--color-border);*/
+/*}*/
 
-nav a:first-of-type {
-  border: 0;
-}
+/*nav a:first-of-type {*/
+/*  border: 0;*/
+/*}*/
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
+/*@media (min-width: 1024px) {*/
+/*  header {*/
+/*    display: flex;*/
+/*    place-items: center;*/
+/*    padding-right: calc(var(--section-gap) / 2);*/
+/*  }*/
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
+/*  .logo {*/
+/*    margin: 0 2rem 0 0;*/
+/*  }*/
 
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+/*  header .wrapper {*/
+/*    display: flex;*/
+/*    place-items: flex-start;*/
+/*    flex-wrap: wrap;*/
+/*  }*/
 
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
+/*  nav {*/
+/*    text-align: left;*/
+/*    margin-left: -1rem;*/
+/*    font-size: 1rem;*/
 
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
-}
+/*    padding: 1rem 0;*/
+/*    margin-top: 1rem;*/
+/*  }*/
+/*}*/
 </style>

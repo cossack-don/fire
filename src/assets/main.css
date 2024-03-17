@@ -36,6 +36,17 @@
   align-items: center;
 }
 
+.d-flex-wrap {
+    flex-wrap: wrap;
+}
+
+.mb-15 {
+    margin-bottom: 15px;
+}
+
+.p-all-15 {
+    padding: 15px;
+}
 .color-link {
     color:#fff;
 }

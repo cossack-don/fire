@@ -61,7 +61,8 @@ import Loader from '@/components/Loader'
 
     <div v-if="!isLoadingData">
       <div class="button-toggle" @click="handlerHideBlock1">{{ isHideBlock1 ? "-":"+"}}</div>
-      <div v-if="isHideBlock1" class="d-flex justify-content-space-evenly">
+
+      <div v-if="isHideBlock1" class="d-flex justify-content-space-evenly d-flex-wrap mb-15 p-all-15">
 
         <div class="card-vue card-core">
           <h3 class="text-center">Vue</h3>
@@ -81,17 +82,17 @@ import Loader from '@/components/Loader'
         <div class="card-core card-js-ts">
           <h3 class="text-center">JS & TS</h3>
           <ul v-for="(item,index) in jsAndTsLinks" :key="index">
-            <li><a :href="item.link"> {{item.name}}</a></li>
+            <li><a target="_blank" class="color-link" :href="item.link"> {{item.name}}</a></li>
           </ul>
         </div>
       </div>
 
       <div class="button-toggle" @click="handlerHideBlock2">{{ isHideBlock2 ? "-":"+"}}</div>
-      <div  v-if="isHideBlock2" class="d-flex justify-content-space-evenly">
+      <div  v-if="isHideBlock2" class="d-flex justify-content-space-evenly d-flex-wrap p-all-15">
         <div class="card-react card-core">
           <h3 class="text-center">React</h3>
           <ul v-for="(item,index) in reactLinks" :key="index">
-            <li><a class="color-link" :href="item.link"> {{item.name}}</a></li>
+            <li><a target="_blank" class="color-link" :href="item.link"> {{item.name}}</a></li>
           </ul>
         </div>
 
@@ -99,14 +100,14 @@ import Loader from '@/components/Loader'
         <div class="card-core card-python">
           <h3 class="text-center">Python</h3>
           <ul v-for="(item,index) in pythonLinks" :key="index">
-            <li><a :href="item.link"> {{item.name}}</a></li>
+            <li><a target="_blank" class="color-link" :href="item.link"> {{item.name}}</a></li>
           </ul>
         </div>
 
         <div class="card-core card-chore">
           <h3 class="text-center">Chore</h3>
           <ul v-for="(item,index) in choreLinks" :key="index">
-            <li><a :href="item.link"> {{item.name}}</a></li>
+            <li><a target="_blank" :href="item.link" class="color-link"> {{item.name}}</a></li>
           </ul>
         </div>
       </div>
@@ -114,7 +115,7 @@ import Loader from '@/components/Loader'
 
       <div class="button-toggle" @click="handlerHideBlock3">{{ isHideBlock3 ? "-":"+"}}</div>
 
-      <div v-if="isHideBlock3" class="d-flex justify-content-space-evenly">
+      <div v-if="isHideBlock3" class="d-flex justify-content-space-evenly d-flex-wrap p-all-15">
 
         <div class="card-video-curses card-core">
           <h3 class="text-center">Video Curses</h3>
@@ -127,14 +128,14 @@ import Loader from '@/components/Loader'
         <div class="card-core card-slot-1">
           <h3 class="text-center">Slot 2</h3>
           <ul v-for="(item,index) in pythonLinks" :key="index">
-            <li><a target="_blank" :href="item.link"> {{item.name}}</a></li>
+            <li><a class="color-link" target="_blank" :href="item.link"> {{item.name}}</a></li>
           </ul>
         </div>
 
         <div class="card-core card-slot-2">
           <h3 class="text-center">Slot 3</h3>
           <ul v-for="(item,index) in choreLinks" :key="index">
-            <li><a target="_blank" :href="item.link"> {{item.name}}</a></li>
+            <li><a target="_blank" class="color-link" :href="item.link"> {{item.name}}</a></li>
           </ul>
         </div>
       </div>
@@ -154,10 +155,8 @@ import Loader from '@/components/Loader'
 </template>
 
 
-<style>
-.card-vue {
-  background: linear-gradient(315deg, #42d392 25%, #647eff);
-}
+<style scoped>
+
 
 
 .card-core {
@@ -165,38 +164,53 @@ import Loader from '@/components/Loader'
   min-height: 200px;
   border-radius: 8px;
   padding: 10px;
+  margin-bottom: 15px;
 }
+
+.card-vue {
+  background: linear-gradient(315deg, #42d392 25%, #647eff);
+  width: 13%;
+}
+
 .card-helpers-docs{
   background: linear-gradient(215deg, #c670ff 10%, #ffd829);
+  width: 47%;
 
 }
 
 .card-js-ts {
-  background: linear-gradient(115deg, #ffd829 20%, #647eff);
+  width: 28%;
+  background: linear-gradient(115deg, #647eff 20%, #ffd829);
 }
 
 .card-react {
+  width: 38%;
   background: linear-gradient(215deg, #2E9AFFFF 55%, #40e746);
 }
 
 .card-python {
+  width: 12%;
   background: linear-gradient(215deg, #ff852e 15%, #ffd829);
 }
 
 .card-chore {
+  width: 38%;
   background: linear-gradient(215deg, #ffd829 15%, #40e746);
 }
 
 .card-video-curses {
+  width: 18%;
   background: linear-gradient(215deg, #12f3af 25%, #2E9AFFFF);
 }
 
 .card-slot-1 {
-  background: linear-gradient(10deg, #000 5%, #2E9AFFFF);
+  width: 58%;
+  background: linear-gradient(10deg, #d34d4d 5%, #2E9AFFFF);
 }
 
 .card-slot-2 {
-  background: linear-gradient(10deg, #fff 25%, #12f3af);
+  width: 12%;
+  background: linear-gradient(120deg, #7707ee 25%, #12f3af);
 
 }
 
