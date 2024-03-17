@@ -42,10 +42,13 @@ const handlerChangeTheme = ()=>{
 <style scoped>
 .sun {
   background: #ebd9ff;
+  padding-bottom: 250px;
 }
 
 .dark {
   background: #000;
+  padding-bottom: 250px;
+
 }
 .card-vue2 {
   background: linear-gradient(315deg, #42d392 25%, #647eff);

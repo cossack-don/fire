@@ -10,7 +10,7 @@ const reactLinks = ref(null)
 const pythonLinks = ref(null)
 const choreLinks = ref(null)
 
-const a = ref(null)
+const videoCursesLinks = ref(null)
 
 
 const isHideBlock1 = ref(true)
@@ -36,6 +36,8 @@ const serviceFireBase = {
       helpersAndDocsLinks.value = dataParseJson.helperAndDocs
       jsAndTsLinks.value = dataParseJson.jsAndTs
       choreLinks.value = dataParseJson.chore
+
+      videoCursesLinks.value = dataParseJson.videoCurses
     } catch(e){
       console.log('error',e)
     }finally {
@@ -58,7 +60,7 @@ import Loader from '@/components/Loader'
 <Loader v-if="isLoadingData"/>
 
     <div v-if="!isLoadingData">
-      <div @click="handlerHideBlock1">{{ isHideBlock1 ? "-":"+"}}</div>
+      <div class="button-toggle" @click="handlerHideBlock1">{{ isHideBlock1 ? "-":"+"}}</div>
       <div v-if="isHideBlock1" class="d-flex justify-content-space-evenly">
 
         <div class="card-vue card-core">
@@ -72,7 +74,7 @@ import Loader from '@/components/Loader'
         <div class="card-core card-helpers-docs">
           <h3 class="text-center">Helpers & Docs</h3>
           <ul v-for="item in helpersAndDocsLinks" :key="item.id">
-            <li><a :href="item.link"> {{item.name}}</a></li>
+            <li><a target="_blank" class="color-link" :href="item.link"> {{item.name}}</a></li>
           </ul>
         </div>
 
@@ -84,8 +86,8 @@ import Loader from '@/components/Loader'
         </div>
       </div>
 
-      <div @click="handlerHideBlock2">{{ isHideBlock2 ? "-":"+"}}</div>
-      <div v-if="isHideBlock2" class="d-flex justify-content-space-evenly">
+      <div class="button-toggle" @click="handlerHideBlock2">{{ isHideBlock2 ? "-":"+"}}</div>
+      <div  v-if="isHideBlock2" class="d-flex justify-content-space-evenly">
         <div class="card-react card-core">
           <h3 class="text-center">React</h3>
           <ul v-for="item in reactLinks" :key="item.id">
@@ -110,11 +112,31 @@ import Loader from '@/components/Loader'
       </div>
 
 
-      <div @click="handlerHideBlock3">{{ isHideBlock3 ? "-":"+"}}</div>
+      <div class="button-toggle" @click="handlerHideBlock3">{{ isHideBlock3 ? "-":"+"}}</div>
 
-      <div v-if="isHideBlock3">
+      <div v-if="isHideBlock3" class="d-flex justify-content-space-evenly">
 
-        3 content
+        <div class="card-react card-core">
+          <h3 class="text-center">Video Curses</h3>
+          <ul v-for="item in videoCursesLinks" :key="item.id">
+            <li><a class="color-link" :href="item.link"> {{item.name}}</a></li>
+          </ul>
+        </div>
+
+
+        <div class="card-core card-python">
+          <h3 class="text-center">Slot 2</h3>
+          <ul v-for="item in pythonLinks" :key="item.id">
+            <li><a :href="item.link"> {{item.name}}</a></li>
+          </ul>
+        </div>
+
+        <div class="card-core card-chore">
+          <h3 class="text-center">Slot 3</h3>
+          <ul v-for="item in choreLinks" :key="item.id">
+            <li><a :href="item.link"> {{item.name}}</a></li>
+          </ul>
+        </div>
       </div>
     </div>
 
@@ -163,5 +185,22 @@ import Loader from '@/components/Loader'
 
 .card-chore {
   background: linear-gradient(215deg, #ffd829 15%, #40e746);
+}
+
+.button-toggle {
+  margin-left: 20px;
+  position: relative;
+  width: 30px;
+  height: 30px;
+  background: #8e63ad;
+  color: #fff;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+}
+.button-toggle:hover {
+  cursor: pointer;
 }
 </style>
