@@ -37,7 +37,7 @@ const serviceFireBase = {
       jsAndTsLinks.value = dataParseJson.jsAndTs
       choreLinks.value = dataParseJson.chore
 
-      videoCursesLinks.value = dataParseJson.videoCurses
+      videoCursesLinks.value = dataParseJson.vueCurses
     } catch(e){
       console.log('error',e)
     }finally {
