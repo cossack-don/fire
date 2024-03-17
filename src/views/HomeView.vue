@@ -2,15 +2,15 @@
 import {onMounted,ref} from "vue";
 // import TheWelcome from '../components/TheWelcome.vue'
 
-const vueLinks = ref(null)
-const helpersAndDocsLinks = ref(null)
-const jsAndTsLinks = ref(null)
+const vueLinks = ref(null) as any
+const helpersAndDocsLinks = ref(null) as any
+const jsAndTsLinks = ref(null) as any
 
-const reactLinks = ref(null)
-const pythonLinks = ref(null)
-const choreLinks = ref(null)
+const reactLinks = ref(null) as any
+const pythonLinks = ref(null) as any
+const choreLinks = ref(null) as any
 
-const videoCursesLinks = ref(null)
+const videoCursesLinks = ref(null) as any
 
 
 const isHideBlock1 = ref(true)
