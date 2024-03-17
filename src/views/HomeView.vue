@@ -116,25 +116,25 @@ import Loader from '@/components/Loader'
 
       <div v-if="isHideBlock3" class="d-flex justify-content-space-evenly">
 
-        <div class="card-react card-core">
+        <div class="card-video-curses card-core">
           <h3 class="text-center">Video Curses</h3>
           <ul v-for="(item,index) in videoCursesLinks" :key="index">
-            <li><a class="color-link" :href="item.link"> {{item.name}}</a></li>
+            <li><a target="_blank" class="color-link" :href="item.link"> {{item.name}}</a></li>
           </ul>
         </div>
 
 
-        <div class="card-core card-python">
+        <div class="card-core card-slot-1">
           <h3 class="text-center">Slot 2</h3>
           <ul v-for="(item,index) in pythonLinks" :key="index">
-            <li><a :href="item.link"> {{item.name}}</a></li>
+            <li><a target="_blank" :href="item.link"> {{item.name}}</a></li>
           </ul>
         </div>
 
-        <div class="card-core card-chore">
+        <div class="card-core card-slot-2">
           <h3 class="text-center">Slot 3</h3>
           <ul v-for="(item,index) in choreLinks" :key="index">
-            <li><a :href="item.link"> {{item.name}}</a></li>
+            <li><a target="_blank" :href="item.link"> {{item.name}}</a></li>
           </ul>
         </div>
       </div>
@@ -185,6 +185,19 @@ import Loader from '@/components/Loader'
 
 .card-chore {
   background: linear-gradient(215deg, #ffd829 15%, #40e746);
+}
+
+.card-video-curses {
+  background: linear-gradient(215deg, #12f3af 25%, #2E9AFFFF);
+}
+
+.card-slot-1 {
+  background: linear-gradient(10deg, #000 5%, #2E9AFFFF);
+}
+
+.card-slot-2 {
+  background: linear-gradient(10deg, #fff 25%, #12f3af);
+
 }
 
 .button-toggle {
