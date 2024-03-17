@@ -1,30 +1,65 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
+import Logo from '@/components/Logo.vue'
+import RoadBus from '@/components/RoadBus.vue'
+import {ref} from 'vue'
+
+const isDark = ref(false)
+const handlerChangeTheme = ()=>{
+  isDark.value = !isDark.value
+}
 </script>
 
 <template>
+<div :class="{'dark':isDark, 'sun':!isDark}">
+  <div class="d-flex align-items-center justify-content-center">
+    <span  class="card-vue2">Fire Progressive App</span>
+
+    <Logo/>
+    <span>
+      <button @click="handlerChangeTheme">{{isDark ? 'sun':'dark'}}</button>
+    </span>
+  </div>
+
+  <RoadBus style="margin-top: -50px; margin-bottom: -150px; width: 100%; height: 500px"/>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
+    <div class="d-flex">
+      <nav class="d-flex">
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
       </nav>
     </div>
+
+
   </header>
 
   <RouterView />
+</div>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
+.sun {
+  background: #ebd9ff;
 }
+
+.dark {
+  background: #000;
+}
+.card-vue2 {
+  background: linear-gradient(315deg, #42d392 25%, #647eff);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 60px;
+
+}
+
+
+/*header {*/
+/*  line-height: 1.5;*/
+/*  max-height: 100vh;*/
+/*}*/
 
 .logo {
   display: block;
