@@ -65,7 +65,7 @@ import Loader from '@/components/Loader'
 
         <div class="card-vue card-core">
           <h3 class="text-center">Vue</h3>
-          <ul v-for="item in vueLinks" :key="item.id">
+          <ul v-for="(item,index) in vueLinks" :key="index">
             <li><a class="color-link" target="_blank" :href="item.link"> {{item.name}}</a></li>
           </ul>
         </div>
@@ -73,14 +73,14 @@ import Loader from '@/components/Loader'
 
         <div class="card-core card-helpers-docs">
           <h3 class="text-center">Helpers & Docs</h3>
-          <ul v-for="item in helpersAndDocsLinks" :key="item.id">
+          <ul v-for="(item,index) in helpersAndDocsLinks" :key="index">
             <li><a target="_blank" class="color-link" :href="item.link"> {{item.name}}</a></li>
           </ul>
         </div>
 
         <div class="card-core card-js-ts">
           <h3 class="text-center">JS & TS</h3>
-          <ul v-for="item in jsAndTsLinks" :key="item.id">
+          <ul v-for="(item,index) in jsAndTsLinks" :key="index">
             <li><a :href="item.link"> {{item.name}}</a></li>
           </ul>
         </div>
@@ -90,7 +90,7 @@ import Loader from '@/components/Loader'
       <div  v-if="isHideBlock2" class="d-flex justify-content-space-evenly">
         <div class="card-react card-core">
           <h3 class="text-center">React</h3>
-          <ul v-for="item in reactLinks" :key="item.id">
+          <ul v-for="(item,index) in reactLinks" :key="index">
             <li><a class="color-link" :href="item.link"> {{item.name}}</a></li>
           </ul>
         </div>
@@ -98,14 +98,14 @@ import Loader from '@/components/Loader'
 
         <div class="card-core card-python">
           <h3 class="text-center">Python</h3>
-          <ul v-for="item in pythonLinks" :key="item.id">
+          <ul v-for="(item,index) in pythonLinks" :key="index">
             <li><a :href="item.link"> {{item.name}}</a></li>
           </ul>
         </div>
 
         <div class="card-core card-chore">
           <h3 class="text-center">Chore</h3>
-          <ul v-for="item in choreLinks" :key="item.id">
+          <ul v-for="(item,index) in choreLinks" :key="index">
             <li><a :href="item.link"> {{item.name}}</a></li>
           </ul>
         </div>
@@ -118,7 +118,7 @@ import Loader from '@/components/Loader'
 
         <div class="card-react card-core">
           <h3 class="text-center">Video Curses</h3>
-          <ul v-for="item in videoCursesLinks" :key="item.id">
+          <ul v-for="(item,index) in videoCursesLinks" :key="index">
             <li><a class="color-link" :href="item.link"> {{item.name}}</a></li>
           </ul>
         </div>
@@ -126,14 +126,14 @@ import Loader from '@/components/Loader'
 
         <div class="card-core card-python">
           <h3 class="text-center">Slot 2</h3>
-          <ul v-for="item in pythonLinks" :key="item.id">
+          <ul v-for="(item,index) in pythonLinks" :key="index">
             <li><a :href="item.link"> {{item.name}}</a></li>
           </ul>
         </div>
 
         <div class="card-core card-chore">
           <h3 class="text-center">Slot 3</h3>
-          <ul v-for="item in choreLinks" :key="item.id">
+          <ul v-for="(item,index) in choreLinks" :key="index">
             <li><a :href="item.link"> {{item.name}}</a></li>
           </ul>
         </div>
