@@ -44,6 +44,13 @@
     margin-bottom: 15px;
 }
 
+.mb-10 {
+    margin-bottom: 10px;
+}
+.mr-10 {
+    margin-right: 10px;
+}
+
 .p-all-15 {
     padding: 15px;
 }

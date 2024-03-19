@@ -25,10 +25,12 @@ const handlerSearch =(e)=>{
   })
   // console.log(a,3)
 }
+import Test from '@/components/Test'
 </script>
 
 <template>
 <div :class="{'dark':isDark, 'sun':!isDark}">
+<!--  <Test/>-->
 <!--  <input type="text" v-model="stateSearch" @input="handlerSearch">-->
 
   <div class="d-flex align-items-center justify-content-center">
@@ -43,8 +45,8 @@ const handlerSearch =(e)=>{
   <header class="header">
     <div class="d-flex justify-content-center">
       <nav class="d-flex">
-        <RouterLink to="/" style="margin-right: 15px">Home</RouterLink>
-        <RouterLink to="/about" style="margin-right: 15px">About</RouterLink>
+        <RouterLink to="/" style="margin-right: 15px">Главная</RouterLink>
+        <RouterLink to="/principles" style="margin-right: 15px">Принципы</RouterLink>
 
       <button @click="handlerChangeTheme">{{isDark ? 'sun':'dark'}}</button>
 
