@@ -20,7 +20,7 @@ const router = createRouter({
     {
       path: '/api/:path*',
       redirect: () => {
-          return '/api/';
+          return '/api';
       },
     },
   ]
