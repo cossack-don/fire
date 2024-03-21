@@ -9,3 +9,4 @@ def hello_world():
 @app.get("/api/test2/")
 def hello_world2():
     return {"message": "Hello dadadad"}
+
