@@ -20,14 +20,7 @@ const router = createRouter({
     {
       path: '/api/:path*',
       redirect: () => {
-        // Check if the environment is development
-        // if (process.env.NODE_ENV === 'development') {
-        //   // Redirect to the development server
-        //   return 'http://127.0.0.1:8000/api/:path*';
-        // } else {
-          // Redirect to the production API
           return '/api/';
-        // }
       },
     },
   ]
