@@ -18,9 +18,9 @@ const router = createRouter({
       component: () => import('../views/Principles.vue')
     },
     {
-      path: '/api/:*',
+      path: '/api/',
       redirect: () => {
-          return '/api';
+          return '/api/';
       },
     },
   ]
